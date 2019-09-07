@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="" />
+    <style>
+      form input {
+        display: block;
+        background-color: aqua;
+        border-radius: 5px;
+      }
+      .result {
+        width: 100px;
+        background-color: beige;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <label for="">Peso: </label>
+      <input type="number" id="numeroUno" value="67" />
+      <label for="">Estatura: </label>
+      <input type="number" id="numeroDos" value="1.7" />
+      <button
+        type="button"
+        onclick="document.getElementById('imc').innerHTML = calcularIMC()"
+      >
+        Calcular
+      </button>
+    </form>
+    <div class="result">Resultado: <span id="imc"></span></div>
+
+    <script>
+      /*
+      //let numero = 5; // declaración
+      let numeroDos = 3;
+      let texto = "hola" + numeroDos;
+      console.log("Bienvenidos a Java Script");
+      numero = 3;
+      console.log(8*9-3/3); // Jerarquia de operadores (primero multiplicaciones y divisiones)
+      */
+      function calcularIMC() {
+        let peso = document.getElementById("numeroUno").value;
+        let estatura = document.getElementById("numeroDos").value;
+        let imc = peso / Math.pow(estatura, 2);
+        document.getElementById("imc").innerHTML = imc.toFixed(2);
+        return imc;
+      }
+
+      let contador = 0;
+      while (contador < 10) {
+        console.log(contador);
+        contador++;
+      }
+    </script>
+  </body>
+</html>
